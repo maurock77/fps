@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour {
     // velocidad de movimiento del jugador
     public float speed = 10f;
 
+    private float gravity = -9.81f;
+
+    Vector3 velocity;
+
     void Start()
     {
     }
@@ -27,6 +31,10 @@ public class PlayerMovement : MonoBehaviour {
 
         // mueve al jugador teniendo en cuenta la velocidad y el tiempo transcurrido
         characterController.Move(move * speed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+
+        characterController.Move(velocity * Time.deltaTime);
 
     }
 
