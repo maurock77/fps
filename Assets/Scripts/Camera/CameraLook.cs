@@ -52,7 +52,7 @@ public class CameraLook : MonoBehaviour {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
 
         float rawY = Input.GetAxis("Mouse Y");
-        Debug.Log("Raw MouseY: " + rawY);
+        // Debug.Log("Raw MouseY: " + rawY);
 
         float mouseY = rawY * mouseSensitivity * Time.deltaTime;
         // obtiene el movimiento vertical del mouse
