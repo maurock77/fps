@@ -27,7 +27,13 @@ public class CameraLook : MonoBehaviour {
     /// </summary>
     void Start()
     {
+        xRotation = 0f;
+
+        transform.localRotation = Quaternion.identity;
+
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
     /// <summary>
@@ -36,15 +42,24 @@ public class CameraLook : MonoBehaviour {
     /// </summary>
     void Update()
     {
+
+        if (Time.frameCount < 5)
+        {
+            return;
+        }
         
         // obtiene el movimiento horizontal dle mouse
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
 
+        float rawY = Input.GetAxis("Mouse Y");
+        Debug.Log("Raw MouseY: " + rawY);
+
+        float mouseY = rawY * mouseSensitivity * Time.deltaTime;
         // obtiene el movimiento vertical del mouse
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         // acumula la rotación vertical
-        xRotation -= mouseY; 
+        xRotation += mouseY; 
 
         // límita la vista para evitar giros imposibles
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
