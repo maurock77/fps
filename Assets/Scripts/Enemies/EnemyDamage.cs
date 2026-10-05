@@ -6,7 +6,7 @@ public class EnemyDamage : MonoBehaviour
 {
     public int damage = 10;
     public float attackCooldown = 1f;
-    public float attackDistance = 1.5f;
+    public float attackDistance = 2.5f;
 
     private float nextAttackTime;
     private Transform player;
@@ -29,6 +29,8 @@ public class EnemyDamage : MonoBehaviour
             Vector3.Distance(transform.position,
                              player.position);
 
+        Debug.Log("Distancia: " + distance);
+
         if (distance <= attackDistance &&
             Time.time >= nextAttackTime)
         {
@@ -38,6 +40,8 @@ public class EnemyDamage : MonoBehaviour
             if (health != null)
             {
                 health.TakeDamage(damage);
+
+                Debug.Log("Enemigo atacando");
 
                 nextAttackTime =
                     Time.time + attackCooldown;
