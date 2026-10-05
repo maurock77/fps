@@ -43,7 +43,7 @@ Este proyecto corresponde al desarrollo de un videojuego 3D realizado en Unity. 
 
 ## Autor
 
-[Tu nombre]
+Mauricio Henríquez Pérez
 
 ## Versión
 
