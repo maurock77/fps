@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2270035343974394166}
   - component: {fileID: 6190471861685073676}
   - component: {fileID: 728391621960857982}
+  - component: {fileID: -2369663688271541271}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -151,3 +152,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   detectionRange: 5
+--- !u!114 &-2369663688271541271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7565407142903238496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ca5e7bf4dbc9a44b9b1e33390e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 100
+  collectiblePrefab: {fileID: 2933399901948414154, guid: a038c02b15b028e4196346c24517872f,
+    type: 3}
