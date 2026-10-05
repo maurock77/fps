@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("El enemigo recibió daño");
+       // Debug.Log("El enemigo recibió daño");
 
         currentHealth -= damage;
 
@@ -30,11 +30,11 @@ public class EnemyHealth : MonoBehaviour {
 
         private void Die() {
 
-        Debug.Log("ENEMIGO MUERTO");
+        // Debug.Log("ENEMIGO MUERTO");
 
         if (collectiblePrefab != null) {
 
-            Debug.Log("Generando moneda");
+           // Debug.Log("Generando moneda");
 
             Instantiate(collectiblePrefab, transform.position, Quaternion.identity);
         }
